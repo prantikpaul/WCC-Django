@@ -1,0 +1,37 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}About Us | Well Community Health Care{% endblock %}
+
+{% block body %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background: linear-gradient(rgb(31, 30, 30), rgba(0, 0, 0, 0.9));">
+
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
+            
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+
+<div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-4 text-center">About Us</h1>
+    <!-- <h2 class="text-xl font-semibold mb-2 text-center">Our Place in the Community</h2> -->
+    <p class="mb-4 text-center">Our mission is to provide the highest quality NDIS with compassionate and accessible service for all.</p>
+    <p class="mb-4 text-center">
+        WCC is a registered provider of the National Disability Insurance Scheme (NDIS) and was established in end of December 2023 to meet the needs of participants in the community of Australia.
+We provide high-quality and genuine support services to vulnerable people of all ages. The initial idea of WCC was first thought of by the directors in 2020 and was driven by the passion to give back to the community. 
+To ensure WCC services remain best practice and unique, we have a management team, which involves key people from various expertise, skills, and backgrounds. This collaborative approach to high quality services ensure that it sets WCC apart from other local providers.
+At WCC we work hard to build independence, increase opportunities and social participation for people living with aged and disability in Australia.
+    <div class="mb-4 text-center">
+        <img src="{% static 'img/cxcx.jpg' %}" alt="Community Health Care building exterior" class="w-full rounded-lg" />
+        <div class="flex justify-center mt-2">
+            <!-- <button class="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700">▶ Play Video</button> -->
+        </div>
+    </div>
+</div>
+{% endblock %}

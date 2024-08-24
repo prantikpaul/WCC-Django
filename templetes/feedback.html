@@ -1,0 +1,111 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}Feedback | Well Community Health Care{% endblock %}
+
+{% block body %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background: linear-gradient(rgb(31, 30, 30), rgba(0, 0, 0, 0.9));">
+
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Feedback</h1>
+            
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<script src="https://cdn02.jotfor.ms/static/prototype.forms.js?v=3.3.56144" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/static/jotform.forms.js?v=3.3.56144" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/punycode-1.4.1.min.js?v=3.3.56144" type="text/javascript" defer></script>
+<script src="https://cdn01.jotfor.ms/s/umd/fe04f262c67/for-form-branding-footer.js?v=3.3.56144" type="text/javascript" defer></script>
+<script src="https://cdn02.jotfor.ms/js/vendor/smoothscroll.min.js?v=3.3.56144" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/js/errorNavigation.js?v=3.3.56144" type="text/javascript"></script>
+
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/stylebuilder/static/form-common.css?v=23cf4b1
+"/>
+<style type="text/css">@media print{*{-webkit-print-color-adjust: exact !important;color-adjust: exact !important;}.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.56144&themeRevisionID=65660e4b326633110492e01a"/>
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_styles.css?3.3.56144" />
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/css/styles/payment/payment_feature.css?3.3.56144" />
+
+
+<form method="POST">
+  {% csrf_token %}
+  <div role="main" class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-large">
+          <div class="header-text httal htvam">
+            <h1 id="header_1" class="form-header" data-component="header">Feedback Form</h1>
+            <div id="subHeader_1" class="form-subHeader">We would love to hear your thoughts, suggestions, concerns or problems with anything so we can improve!</div>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_fullname" id="id_8">
+        <label class="form-label form-label-top form-label-auto" id="label_8" for="first_8"> Name<span class="form-required">*</span> </label>
+        <div id="cid_8" class="form-input-wide jf-required" data-layout="full">
+          <div data-wrapper-react="true">
+            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+              <input type="text" id="first_8" name="q8_name[first]" class="form-textbox validate[required]" size="10" required="" value="" />
+              <label class="form-sub-label" for="first_8">First Name</label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+              <input type="text" id="last_8" name="q8_name[last]" class="form-textbox validate[required]" size="15" required="" value="" />
+              <label class="form-sub-label" for="last_8">Last Name</label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_email" id="id_6">
+        <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6"> E-mail<span class="form-required">*</span> </label>
+        <div id="cid_6" class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="email" id="input_6" name="q6_email6" class="form-textbox validate[required, Email]" size="310" placeholder="ex: myname@example.com" required="" value="" />
+            <label class="form-sub-label" for="input_6">example@example.com</label>
+          </span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_radio" id="id_3">
+        <label class="form-label form-label-top form-label-auto" id="label_3"> Feedback Type </label>
+        <div id="cid_3" class="form-input-wide" data-layout="full">
+            <div class="form-multiple-column" data-columncount="3">
+                <span class="form-radio-item">
+                    <input type="radio" class="form-radio" id="input_3_0" name="q3_feedbackType" value="Comments" required />
+                    <label id="label_input_3_0" for="input_3_0">Comments</label>
+                </span>
+                <span class="form-radio-item">
+                    <input type="radio" class="form-radio" id="input_3_1" name="q3_feedbackType" value="Suggestions" required />
+                    <label id="label_input_3_1" for="input_3_1">Suggestions</label>
+                </span>
+                <span class="form-radio-item">
+                    <input type="radio" class="form-radio" id="input_3_2" name="q3_feedbackType" value="Questions" required />
+                    <label id="label_input_3_2" for="input_3_2">Questions</label>
+                </span>
+            </div>
+        </div>
+    </li>
+    
+      <li class="form-line jf-required" data-type="control_textarea" id="id_4">
+        <label class="form-label form-label-top form-label-auto" id="label_4" for="input_4"> Describe Your Feedback:<span class="form-required">*</span> </label>
+        <div id="cid_4" class="form-input-wide jf-required" data-layout="full">
+          <textarea id="input_4" class="form-textarea validate[required]" name="q4_describeYour" style="width:648px;height:163px" required=""></textarea>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_9">
+        <div id="cid_9" class="form-input-wide" data-layout="full">
+          <div class="form-buttons-wrapper form-buttons-auto">
+            <button id="input_9" type="submit" class="form-submit-button submit-button">Submit</button>
+          </div>
+        </div>
+      </li>
+      <li style="display:none">Should be Empty: <input type="text" name="website" value="" type="hidden" /></li>
+    </ul>
+  </div>
+</form>
+
+  
+      
+
+{% endblock %}
