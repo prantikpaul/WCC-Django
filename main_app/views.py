@@ -108,3 +108,7 @@ def req(request):
 def thank_u(request):
     
     return render(request,'thank_u.html')
+
+def vision(request):
+    
+    return render(request,'vision.html')

@@ -11,4 +11,5 @@ path('feedback/',feedback, name='feedback'),
 path('career/',career, name='career'),
 path('request_free_consultation/',req, name='req'),
 path('thank_you/',thank_u, name='thank_u'),
+path('vision/',vision, name='vision'),
 ]
