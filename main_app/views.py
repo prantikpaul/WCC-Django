@@ -11,10 +11,20 @@ def index(request):
         service_date = request.POST.get('service_date')
         special_request = request.POST.get('special_request')
 
-        if special_request :
-            print(name,email,service,service_date,special_request)
-        else :
-            print(name,email,service,service_date)
+        # Create the email message
+        subject = f"Service Request from {name}"
+        if special_request:
+            message = f"Name: {name}\nEmail: {email}\nService: {service}\nService Date: {service_date}\nSpecial Request: {special_request}"
+        else:
+            message = f"Name: {name}\nEmail: {email}\nService: {service}\nService Date: {service_date}"
+
+        from_email = 'assassins81007@gmail.com'  # Replace with your Gmail
+        recipient_list = ['assassins81007@gmail.com']  # Replace with your Gmail
+
+        # Send the email
+        send_mail(subject, message, from_email, recipient_list)
+
+        # Redirect after sending the email
         return redirect('thank_u')
     return render(request,'index.html')
 
@@ -37,13 +47,23 @@ def contact(request):
         subject = request.POST.get('subject')
         message = request.POST.get('message')
 
-        # Process the form data (e.g., save to database, send an email)
-        # Example: Print form data to the console
-        print(f"Name: {name}")
-        print(f"Email: {email}")
-        print(f"Number: {number}")
-        print(f"Subject: {subject}")
-        print(f"Message: {message}")
+        subjectt = f"New contact form submission: {subject}"
+        
+        message = f"""
+        Name: {name}
+        Email: {email}
+        Phone Number: {number}
+        
+        Message:
+        {message}
+        """
+
+        from_email = 'assassins81007@gmail.com'  # Replace with your Gmail
+        recipient_list = ['assassins81007@gmail.com']  # Replace with your Gmail
+
+        # Send the email
+        send_mail(subjectt, message, from_email, recipient_list)
+        
         return redirect('thank_u')
     return render(request,'contact.html')
 
@@ -58,12 +78,26 @@ def feedback(request):
         feed_feedback_type = request.POST.get('q3_feedbackType')
         feed_feedback_description = request.POST.get('q4_describeYour')
 
-        # Process the data, e.g., save it to the database, send an email, etc.
-        # Example: Just printing to the console for now
-        print(f"Name: {feed_first_name} {feed_last_name}")
-        print(f"Email: {feed_email}")
-        print(f"Feedback Type: {feed_feedback_type}")
-        print(f"Feedback: {feed_feedback_description}")
+        email_subject = f"New Feedback from {feed_first_name} {feed_last_name}"
+        email_message = f"""
+        Name: {feed_first_name} {feed_last_name}
+        Email: {feed_email}
+        Feedback Type: {feed_feedback_type}
+        
+        Feedback Description:
+        {feed_feedback_description}
+        """
+
+        from_email = 'assassins81007@gmail.com'  # Replace with your Gmail
+        recipient_list = ['assassins81007@gmail.com']  # Replace with your Gmail
+        
+        # Send the email
+        send_mail(
+            email_subject,
+            email_message,
+            from_email,  # From email (your email)
+            recipient_list,  # To email (where you want the feedback)
+        )
         return redirect('thank_u')
     return render(request,'feedback.html')
 
@@ -78,15 +112,30 @@ def career(request):
         department = request.POST.get('q18_department')
         cv_link = request.POST.get('q17_supervisorsName[first]')
 
-        # Process the form data (e.g., save to database, send an email)
-        # Example: Print form data to the console
-        print(f"Name: {first_name} {last_name}")
-        print(f"Date of Birth: {dob}")
-        print(f"Email: {email}")
-        print(f"Phone: {phone}")
-        print(f"Job Position: {job_position}")
-        print(f"Department: {department}")
-        print(f"CV Link: {cv_link}")
+        email_subject = f"New Job Application: {first_name} {last_name} for {job_position}"
+        email_message = f"""
+        First Name: {first_name}
+        Last Name: {last_name}
+        Date of Birth: {dob}
+        Email: {email}
+        Phone Number: {phone}
+        Job Position: {job_position}
+        Department: {department}
+        CV Link: {cv_link}
+        """
+        from_email = 'assassins81007@gmail.com'  # Replace with your Gmail
+        recipient_list = ['assassins81007@gmail.com']  # Replace with your Gmail
+        # Send the email
+        send_mail(
+            email_subject,
+            email_message,
+            from_email,  # From email (your email)
+            recipient_list,  # To email where you want to send the data
+        )
+        
+        # Redirect to a thank you page
+        return redirect('thank_u')
+
         return redirect('thank_u')
     return render(request,'career.html')
 
@@ -98,10 +147,20 @@ def req(request):
         service_date = request.POST.get('service_date')
         special_request = request.POST.get('special_request')
 
-        if special_request :
-            print(name,email,service,service_date,special_request)
-        else :
-            print(name,email,service,service_date)
+        # Create the email message
+        subject = f"Service Request from {name}"
+        if special_request:
+            message = f"Name: {name}\nEmail: {email}\nService: {service}\nService Date: {service_date}\nSpecial Request: {special_request}"
+        else:
+            message = f"Name: {name}\nEmail: {email}\nService: {service}\nService Date: {service_date}"
+
+        from_email = 'assassins81007@gmail.com'  # Replace with your Gmail
+        recipient_list = ['assassins81007@gmail.com']  # Replace with your Gmail
+
+        # Send the email
+        send_mail(subject, message, from_email, recipient_list)
+
+        # Redirect after sending the email
         return redirect('thank_u')
     return render(request,'request.html')
 
